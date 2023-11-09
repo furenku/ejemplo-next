@@ -9,6 +9,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <App text={"Página de Inicio"}/>
+    <App text="Página dos"/>
   )
 }
