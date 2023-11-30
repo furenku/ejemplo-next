@@ -22,3 +22,9 @@
     /* p1rem */
     padding: .5rem;
 }
+
+
+
+.ColorAdd button[disabled] {
+    color: #aaa;
+}

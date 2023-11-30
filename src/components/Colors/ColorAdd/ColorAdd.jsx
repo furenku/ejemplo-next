@@ -1,25 +1,50 @@
+import { useState } from "react"
+
 import styles from "./ColorAdd.module.css"
 
-export default () => (
-    <div className={ styles.ColorAdd }>
-        
-        <label>
-            <span>
-                Name
-            </span>
-            <input type="text" name={ "name" } value={ "Color name" } />
-        </label>
+export default ({ add }) => {
 
-        <label>
-            <span>
-                Code
-            </span>
-            <input type="text" name={ "code" } value={ "Color code" } />
-        </label>
+    const [name, setName] = useState("Mi color")
+    const [code, setCode] = useState("#FFF")
 
-        <button>
-            Add
-        </button>
+    const changeName = ( event ) => {
+        const newName = event.target.value
+        setName( newName )
+    }
+    const changeCode = ( event ) => {
+        const newCode = event.target.value
+        setCode( newCode )
+    }
 
-    </div>
-)
+    const doAdd = () => {
+        if( add ) {
+            add({ name, code })
+        }
+    }
+
+
+    return (
+        <div className={ styles.ColorAdd }>
+            
+            <label>
+                <span>
+                    Name
+                </span>
+                <input type="text" name={ "name" } value={ name } onChange={ changeName }/>
+            </label>
+    
+            <label>
+                <span>
+                    Code
+                </span>
+                <input type="text" name={ "code" } value={ code } onChange={ changeCode }/>
+            </label>
+    
+            <button onClick={ doAdd } disabled={ ! add }>
+                Add
+            </button>
+    
+        </div>
+    )
+
+}
