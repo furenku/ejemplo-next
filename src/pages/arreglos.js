@@ -4,6 +4,7 @@ import fakeColors from "../data/fake/colors"
 
 import Color from "@/components/Colors/Color/Color"
 import ColorAdd from "@/components/Colors/ColorAdd/ColorAdd"
+import ColorPalette from "@/components/Colors/ColorPalette/ColorPalette"
 
 
 export default () => {
@@ -74,6 +75,9 @@ export default () => {
                     </div>
 
                 </div>
+
+                <ColorPalette/>
+                
             
             </div>
         )
